@@ -11,4 +11,7 @@ Journey of Practicing DSA
     - Network Delay
 - BackTracing
     - Word Search
+- Simple logic
+    - Island Perimeter
+
 
