@@ -9,4 +9,6 @@ Journey of Practicing DSA
     - Pacific Atlantic Water Flow
 - Dijkstra's Algorithm (TC: O(E log V))
     - Network Delay
+- BackTracing
+    - Word Search
 
