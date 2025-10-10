@@ -1,4 +1,5 @@
 from typing import List
+from collections import deque
 class Solution:
     def minReorder(self, n: int, connections: List[List[int]]) -> int:
         """
@@ -16,19 +17,21 @@ class Solution:
 
         changed = 0
         visitedSet = set()
+        bfs_queue = deque()
 
-        def dfs(node):
-            nonlocal changed
-            if node in visitedSet:
-                return 
-            visitedSet.add(node)
+        visitedSet.add(0)
+        bfs_queue.append(0)
+
+        while bfs_queue:
+            node = bfs_queue.popleft()
             for nei in neighbors[node]:
-                if nei not in visitedSet and (nei, node) not in edges:
-                    changed += 1
-                dfs(nei)
-                
-        dfs(0)
+                if nei not in visitedSet:
+                    visitedSet.add(nei)
+                    bfs_queue.append(nei)
+                    if (nei, node) not in edges:
+                        changed += 1
         return changed
+        
         
 
 
